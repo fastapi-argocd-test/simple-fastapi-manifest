@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: simple-fastapi
+  namespace: simple-fastapi
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: simple-fastapi
+  template:
+    metadata:
+      labels:
+        app: simple-fastapi
+    spec:
+      containers:
+        - name: simple-fastapi
+          image: ghcr.io/fastapi-argocd-test/simple-fastapi:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8000
+          resources:
+            requests:
+              cpu: "100m"
+              memory: "128Mi"
+            limits:
+              cpu: "500m"
+              memory: "512Mi"
