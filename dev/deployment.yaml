@@ -13,6 +13,8 @@ spec:
       labels:
         app: simple-fastapi
     spec:
+      imagePullSecrets:
+        - name: ghcr-secret
       containers:
         - name: simple-fastapi
           image: ghcr.io/fastapi-argocd-test/simple-fastapi:latest
