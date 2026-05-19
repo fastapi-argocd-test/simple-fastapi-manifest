@@ -17,7 +17,7 @@ spec:
         - name: ghcr-secret
       containers:
         - name: simple-fastapi
-          image: ghcr.io/fastapi-argocd-test/simple-fastapi:a49b9af
+          image: ghcr.io/fastapi-argocd-test/simple-fastapi:975a526
           imagePullPolicy: Always
           ports:
             - containerPort: 8000
